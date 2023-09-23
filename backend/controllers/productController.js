@@ -43,12 +43,13 @@ exports.getProducts = async (req, res) => {
 // Single ProductAttribute
 
 exports.getSingleProduct = async (req, res) => {
-  const { productId } = req.params;
+  const { id } = req.params;
+  console.log("id:", id);
   const product = await Product.findById({
-    _id: productId,
+    _id: id,
   }).populate("shop attributes");
 
-  if (!product) {
+  if (product) {
     res.status(200).json(product);
   } else {
     res.status(400).json({ message: "There is an error" });

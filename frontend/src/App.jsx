@@ -9,22 +9,37 @@ import ProductDetails2 from "./components/detailPage/ProductDetails2";
 import ProductAttributes from "./pages/ProductAttributes";
 import RegisterAttribute from "./pages/RegisterAttribute";
 import AddProduct from "./pages/AddProduct";
+import ProductAttributeDetails from "./components/detailPage/ProductAttributeDetails";
+import Prefetch from "./app/Prefetch";
+import AgeCalculator from "./pages/age/AgeCalculator";
+import Alert from "./pages/alert/Alert";
+import AlertPopup from "./pages/popup/tuto-1/AlertPopup";
+import Toast from "./pages/alert/Toast";
+import ToastNotification from "./pages/popup/toast/ToastNotification";
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="attribute" element={<ProductAttributes />} />
-          <Route path="add-attribute" element={<RegisterAttribute />} />
-          <Route path="add-product" element={<AddProduct />} />
-          <Route path="product/:prodId" element={<ProductDetails />} />
-          <Route
-            path="product-attributes/:slug"
-            element={<ProductDetails2 />}
-          />
-          <Route path="select" element={<SelectOption />} />
+        <Route element={<Prefetch />}>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="attribute" element={<ProductAttributes />} />
+            <Route path="details/:id" element={<ProductAttributeDetails />} />
+            <Route path="add-attribute" element={<RegisterAttribute />} />
+            <Route path="add-product" element={<AddProduct />} />
+            <Route path="product/:prodId" element={<ProductDetails />} />
+            <Route
+              path="product-attributes/:slug"
+              element={<ProductDetails2 />}
+            />
+            <Route path="select" element={<SelectOption />} />
+            {/* complement */}
+            <Route path="age" element={<AgeCalculator />} />
+            <Route path="alert" element={<Alert />} />
+            <Route path="alert-popup-1" element={<AlertPopup />} />
+            <Route path="toast" element={<ToastNotification />} />
+          </Route>
         </Route>
       </Routes>
     </>

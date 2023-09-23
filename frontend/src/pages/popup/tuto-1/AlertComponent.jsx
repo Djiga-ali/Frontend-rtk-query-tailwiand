@@ -1,0 +1,44 @@
+import React, { useContext } from "react";
+import AlertContext from "./alertContext";
+
+const alertStyles = {
+  padding: "16px",
+  borderRadius: "6px",
+  fontSize: "16px",
+  fontWeight: 400,
+};
+
+const severityStyles = {
+  success: {
+    color: "#0f5132",
+    background: "#d1e7dd",
+  },
+  info: {
+    color: "#055160",
+    background: "cff4fc",
+  },
+  warning: {
+    color: "#664d03",
+    background: "fff3cd",
+  },
+  danger: {
+    color: "#842029",
+    background: "#f8d7da",
+  },
+};
+
+const AlertComponent = () => {
+  const [alert] = useContext(AlertContext);
+
+  if (!alert) {
+    return null;
+  }
+  const fullStyles = {
+    ...alertStyles,
+    ...severityStyles[alert.type],
+  };
+
+  return <div style={fullStyles}>{alert.text}</div>;
+};
+
+export default AlertComponent;

@@ -8,7 +8,7 @@ const productSchema = new mongoose.Schema(
     language: { type: String },
     description: { type: String },
     attributes: [
-      { type: mongoose.Schema.Types.ObjectId, ref: "ProductAttributes" },
+      { type: mongoose.Schema.Types.ObjectId, ref: "ProductAttribute" },
     ],
   },
 

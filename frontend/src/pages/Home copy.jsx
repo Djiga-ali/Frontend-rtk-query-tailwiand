@@ -6,41 +6,28 @@ import { useGetAllProductsQuery } from "../app/features/product/productSlice";
 import AttributeProductCard from "../components/cards/AttributeProductCard";
 
 const Home = () => {
-  const emptyArray = [];
-  const attrEmptyArray = [];
-  const { products } = useGetAllProductsQuery(undefined, {
-    selectFromResult: ({ data }) => ({
-      products: data ?? emptyArray,
-    }),
+  const {
+    data: ProductAttributes,
+    isError,
+    isFetching,
+    isLoading,
+    isSuccess,
+    error,
+  } = useGetAllAttributesQuery("attributeList", {
+    pollingInterval: 3000,
+    refetchOnMountOrArgChange: true,
+    skip: false,
   });
-
-  const { ProductAttributes } = useGetAllAttributesQuery(undefined, {
-    selectFromResult: ({ data }) => ({
-      ProductAttributes: data ?? emptyArray,
-    }),
+  const { data: products } = useGetAllProductsQuery("productList", {
+    pollingInterval: 3000,
+    refetchOnMountOrArgChange: true,
+    skip: false,
   });
-  // const {
-  //   data: ProductAttributes,
-  //   isError,
-  //   isFetching,
-  //   isLoading,
-  //   isSuccess,
-  //   error,
-  // } = useGetAllAttributesQuery("attributeList", {
-  //   pollingInterval: 3000,
-  //   refetchOnMountOrArgChange: true,
-  //   skip: false,
-  // });
-  // const { data: products } = useGetAllProductsQuery("productList", {
-  //   pollingInterval: 3000,
-  //   refetchOnMountOrArgChange: true,
-  //   skip: false,
-  // });
 
   console.log("products:", products);
-  // if (isLoading) return <div>Loading...</div>;
-  // if (!products) return <div>No products found!</div>;
-  // if (isError) return <div>An error has occurred!</div>;
+  if (isLoading) return <div>Loading...</div>;
+  if (!products) return <div>No products found!</div>;
+  if (isError) return <div>An error has occurred!</div>;
   //   if (isFetching && !currentData) return <Skeleton />
 
   return (
@@ -57,7 +44,7 @@ const Home = () => {
                   product={product}
                   id={product._id}
                   // name={post.name}
-                  // disabled={isFetching}
+                  disabled={isFetching}
                 />
               ))
             : "No Products found !!"}
@@ -69,7 +56,7 @@ const Home = () => {
               product={product}
               id={product._id}
               // name={post.name}
-              // disabled={isFetching}
+              disabled={isFetching}
             />
           ))}
         </div>

@@ -11,6 +11,13 @@ export default {
         // lg: { min: "1024px", max: "1279px" },
         // xl: { min: "1280px" },
       },
+      keyframes: {
+        toast: {
+          "0%, 100%": { transform: "-translateX(25%)" },
+          "50%": { transform: "translateX(25)" },
+        },
+      },
+      animation: { toast: "toast 1s ease-in-out infinite" },
     },
   },
   plugins: [],

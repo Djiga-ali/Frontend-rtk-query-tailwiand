@@ -1,0 +1,32 @@
+import React, { useState } from "react";
+// import { variants } from "./variants";
+
+const Toast = ({ variant }) => {
+  const [open, setOpen] = useState(true);
+  if (open)
+    return (
+      <div
+        className="flex-1 w-full"
+        style={{
+          background: variant.mainColor,
+          border: "0.1rem solid " + variant.secondaryColor,
+        }}
+      >
+        <div
+          className="symbol-container"
+          style={{ background: variant.secondaryColor }}
+        >
+          <span class="material-symbols-outlined symbol">{variant.symbol}</span>{" "}
+        </div>
+        <div className="description-container">
+          <span className="description-title">{variant.title}:</span>
+          <span className="description-text">{variant.text}</span>
+        </div>
+        <a className="symbol-close-link" onClick={() => setOpen(false)}>
+          <span class="material-symbols-outlined ">close</span>
+        </a>
+      </div>
+    );
+};
+
+export default Toast;

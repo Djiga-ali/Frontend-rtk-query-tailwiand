@@ -3,12 +3,11 @@ import ProductImages from "./ProductImages";
 
 const ProductSubDetail = ({
   prod,
-  mainProdAttr,
   setSelectedImg,
   setMainProdAttr,
   setCarousselImg,
 }) => {
-  const [activeImg, setActiveImage] = useState(prod.pictures[0]?.image);
+  const [activeImg, setActiveImage] = useState(prod.pictures[0]?.url);
 
   return (
     <>
@@ -21,7 +20,7 @@ const ProductSubDetail = ({
             onClick={() => {
               setSelectedImg(prod.pictures);
               setMainProdAttr(prod);
-              setCarousselImg(prod.pictures[0].image);
+              setCarousselImg(prod.pictures[0].url);
             }}
           />
         </div>

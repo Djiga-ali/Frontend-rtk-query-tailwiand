@@ -33,7 +33,11 @@ const AddProduct = () => {
   const onShopChanged = (e) => setShop(e.target.value);
   const onDescriptionChanged = (e) => setDescription(e.target.value);
   const onLanguageChanged = (e) => setLanguage(e.target.value);
-  const onAttributesChanged = (e) => setAttributes(e.target.value);
+  const onAttributesChanged = (e) => {
+    const options = [...e.target.selectedOptions];
+    const values = options.map((option) => option.value);
+    setAttributes(values);
+  };
   const onCategoryIdChanged = (e) => setCategoryId(e.target.value);
 
   const productData = {
@@ -220,19 +224,36 @@ const AddProduct = () => {
                     ))}
                   </select>
                 </div>
-                <div>
+                {/* <div>
                   <label
                     htmlFor="category"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Product Attributes
                   </label>
+                  <select name="" id="" multiple>
+                    {ProductAttributes?.map((productAttr) => (
+                      <option
+                        key={productAttr?._id}
+                        value={productAttr?._id}
+                        className="text-black"
+                      >
+                        {productAttr?.name}
+                      </option>
+                    ))}
+                  </select>
+                </div> */}
+                <div>
+                  <label
+                    htmlFor="attributes"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Sellect prducts attributes:
+                  </label>
                   <select
-                    name=""
-                    id=""
+                    multiple={true}
                     value={attributes}
                     onChange={onAttributesChanged}
-                    multiple
                   >
                     {ProductAttributes?.map((productAttr) => (
                       <option
@@ -245,22 +266,25 @@ const AddProduct = () => {
                     ))}
                   </select>
                 </div>
-                <div>
-                  <label>
-                    Pick all your favorite vegetables:
-                    <select
-                      name="selectedVegetables"
-                      multiple={true}
-                      //   defaultValue={}
-                    >
-                      {ProductAttributes?.map((productAttr) => (
-                        <option key={productAttr?._id} value={productAttr?._id}>
-                          {productAttr?.name}
-                        </option>
-                      ))}
-                    </select>
-                  </label>
-                </div>
+
+                {/* Select multiple options  */}
+                {/* <label>
+        Pick all your favorite vegetables:
+        <select
+          multiple={true}
+          value={selectedVegs}
+          onChange={e => {
+            const options = [...e.target.selectedOptions];
+            const values = options.map(option => option.value);
+            setSelectedVegs(values);
+          }}
+        >
+          <option value="cucumber">Cucumber</option>
+          <option value="corn">Corn</option>
+          <option value="tomato">Tomato</option>
+        </select>
+      </label> */}
+                {/* End Select multiple options  */}
 
                 <button
                   type="submit"
