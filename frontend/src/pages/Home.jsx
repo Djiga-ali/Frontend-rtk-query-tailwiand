@@ -6,76 +6,41 @@ import { useGetAllProductsQuery } from "../app/features/product/productSlice";
 import AttributeProductCard from "../components/cards/AttributeProductCard";
 
 const Home = () => {
-  const emptyArray = [];
-  const attrEmptyArray = [];
-  const { products } = useGetAllProductsQuery(undefined, {
-    selectFromResult: ({ data }) => ({
-      products: data ?? emptyArray,
-    }),
+  const {
+    data: productEntities = [],
+    isLoading,
+    isSuccess,
+    isError,
+    error,
+  } = useGetAllProductsQuery("productList", {
+    pollingInterval: 60000,
+    refetchOnFocus: true,
+    refetchOnMountOrArgChange: true,
   });
 
-  const { ProductAttributes } = useGetAllAttributesQuery(undefined, {
-    selectFromResult: ({ data }) => ({
-      ProductAttributes: data ?? emptyArray,
-    }),
-  });
-  // const {
-  //   data: ProductAttributes,
-  //   isError,
-  //   isFetching,
-  //   isLoading,
-  //   isSuccess,
-  //   error,
-  // } = useGetAllAttributesQuery("attributeList", {
-  //   pollingInterval: 3000,
-  //   refetchOnMountOrArgChange: true,
-  //   skip: false,
-  // });
-  // const { data: products } = useGetAllProductsQuery("productList", {
-  //   pollingInterval: 3000,
-  //   refetchOnMountOrArgChange: true,
-  //   skip: false,
-  // });
+  console.log("productEntities:", productEntities);
 
-  console.log("products:", products);
-  // if (isLoading) return <div>Loading...</div>;
-  // if (!products) return <div>No products found!</div>;
-  // if (isError) return <div>An error has occurred!</div>;
-  //   if (isFetching && !currentData) return <Skeleton />
+  let content;
 
-  return (
-    <>
-      <div className="flex flex-col">
-        <div className="flex-1 h-40 ">
-          <ProductBanner />
+  if (isLoading) content = "Loading...";
+
+  if (isError) {
+    content = <p className="errmsg">{error?.data?.message}</p>;
+  }
+
+  if (isSuccess) {
+    const { ids } = productEntities;
+    content =
+      ids?.length &&
+      ids.map((productId) => (
+        <div key={productId} className="grid grid-cols-5 gap-4">
+          <ProductCard key={productId} productId={productId} />
         </div>
-        <h3>Product attributes</h3>
-        <div className="pl-2 pr-2 grid grid-cols-5 xxs:grid-cols-2 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-          {ProductAttributes
-            ? ProductAttributes?.map((product) => (
-                <AttributeProductCard
-                  product={product}
-                  id={product._id}
-                  // name={post.name}
-                  // disabled={isFetching}
-                />
-              ))
-            : "No Products found !!"}
-        </div>
-        <h3>Product with attributes</h3>
-        <div className="pl-2 pr-2 grid grid-cols-5 xxs:grid-cols-2 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-          {products?.map((product) => (
-            <ProductCard
-              product={product}
-              id={product._id}
-              // name={post.name}
-              // disabled={isFetching}
-            />
-          ))}
-        </div>
-      </div>
-    </>
-  );
+      ));
+  }
+
+  // omit rendering logic
+  return content;
 };
 
 export default Home;

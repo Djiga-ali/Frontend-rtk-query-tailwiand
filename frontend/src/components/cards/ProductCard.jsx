@@ -7,17 +7,20 @@ import {
 } from "react-icons/ai";
 // import product from "../../data/products";
 import { Link } from "react-router-dom";
+import { useGetAllProductsQuery } from "../../app/features/product/productSlice";
 
-const ProductCard = ({ product, id }) => {
-  console.log(
-    "product?.attributes[0]?.pictures[0]?.url",
-    product?.attributes[0]?.pictures[0].url
-  );
+const ProductCard = ({ productId }) => {
+  const { product, isLoading, isSuccess, isError, error } =
+    useGetAllProductsQuery("productList", {
+      selectFromResult: ({ data }) => ({
+        product: data?.entities[productId],
+      }),
+    });
   return (
     <>
       <div className="h-80 mt-4  flex flex-col w-full drop-shadow-lg rounded-lg">
         <div className="flex-1 w-full h-4/6  bg-slate-100 ">
-          <Link to={`/details/${id}`}>
+          <Link to={`/details/${product._id}`}>
             <img
               src={product?.attributes[0]?.pictures[0]?.url}
               alt={product?.name}
@@ -41,7 +44,7 @@ const ProductCard = ({ product, id }) => {
           <span className="flex-1 text-sm font-bold">
             {product?.attributes[0]?.price}
           </span>
-          <Link to={`/details/${id}`}>
+          <Link to={`/details/${product._id}`}>
             <span className="flex-1 text-sm">{product?.shop.name}</span>
           </Link>
 

@@ -10,8 +10,6 @@ export const variants = [
   //blue
   {
     mainColor: "#E5F6FD",
-    mainColor: "#E5F6FD",
-    secondaryColor: "#1AB1F5",
     secondaryColor: "#1AB1F5",
     symbol: "info",
     title: "Information",

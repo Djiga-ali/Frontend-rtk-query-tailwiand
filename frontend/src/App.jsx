@@ -16,8 +16,18 @@ import Alert from "./pages/alert/Alert";
 import AlertPopup from "./pages/popup/tuto-1/AlertPopup";
 import Toast from "./pages/alert/Toast";
 import ToastNotification from "./pages/popup/toast/ToastNotification";
+import { useEffect } from "react";
+import { store } from "./app/store";
+import { productSlice } from "./app/features/product/productSlice";
 
 function App() {
+  useEffect(() => {
+    store.dispatch(
+      productSlice.util.prefetch("getAllProducts", "productList", {
+        force: true,
+      })
+    );
+  }, []);
   return (
     <>
       <Routes>
