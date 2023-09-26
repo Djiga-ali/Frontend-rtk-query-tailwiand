@@ -110,7 +110,7 @@ const ProductAttributeDetails = () => {
   // NB: on ne peut pas utiliser useEffect(()=>[]) après la logic de if (isLoading ...)
 
   return (
-    <div className="grid grid-cols-3">
+    <div className="grid grid-cols-3 xs:grid-cols-1 xxs:grid-cols-1">
       <div>
         <div>
           <div className="flex-1 w-full ">
