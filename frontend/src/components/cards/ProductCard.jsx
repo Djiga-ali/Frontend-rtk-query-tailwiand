@@ -27,6 +27,13 @@ const ProductCard = ({ productId }) => {
               className="flex-1 w-full h-full object-cover xxs:object-fill"
             />
           </Link>
+          {/* <Link to={`/detail-vertical/${product._id}`}>
+            <img
+              src={product?.attributes[0]?.pictures[0]?.url}
+              alt={product?.name}
+              className="flex-1 w-full h-full object-cover xxs:object-fill"
+            />
+          </Link> */}
         </div>
         <div className="flex flex-row w-full h-7  mt-[-30px] bg-gradient-to-r from-slate-200 to-slate-100 justify-between pl-2 pr-2">
           <span className="cursor-pointer">
@@ -46,6 +53,11 @@ const ProductCard = ({ productId }) => {
           </span>
           <Link to={`/details/${product._id}`}>
             <span className="flex-1 text-sm">{product?.shop.name}</span>
+          </Link>
+          <Link to={`/detail-vertical/${product._id}`}>
+            <span className="flex-1 text-sm">
+              {product?.shop.name} || vertical
+            </span>
           </Link>
 
           <span className="flex flex-row p-1">

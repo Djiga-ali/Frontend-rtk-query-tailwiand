@@ -10,6 +10,7 @@ import ProductAttributes from "./pages/ProductAttributes";
 import RegisterAttribute from "./pages/RegisterAttribute";
 import AddProduct from "./pages/AddProduct";
 import ProductAttributeDetails from "./components/detailPage/ProductAttributeDetails";
+import ProductDetailpageVertical from "./components/detailPage/ProductDetailpageVertical";
 import Prefetch from "./app/Prefetch";
 import AgeCalculator from "./pages/age/AgeCalculator";
 import Alert from "./pages/alert/Alert";
@@ -36,6 +37,10 @@ function App() {
             <Route index element={<Home />} />
             <Route path="attribute" element={<ProductAttributes />} />
             <Route path="details/:id" element={<ProductAttributeDetails />} />
+            <Route
+              path="detail-vertical/:id"
+              element={<ProductDetailpageVertical />}
+            />
             <Route path="add-attribute" element={<RegisterAttribute />} />
             <Route path="add-product" element={<AddProduct />} />
             <Route path="product/:prodId" element={<ProductDetails />} />
