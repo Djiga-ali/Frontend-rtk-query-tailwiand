@@ -20,6 +20,9 @@ import ToastNotification from "./pages/popup/toast/ToastNotification";
 import { useEffect } from "react";
 import { store } from "./app/store";
 import { productSlice } from "./app/features/product/productSlice";
+import Modal from "./pages/popup/modal/Modal";
+import ShowModal from "./pages/popup/modal/ShowModal";
+import FormErrorHandler from "./pages/Forms/FormErrorHandler";
 
 function App() {
   useEffect(() => {
@@ -54,6 +57,8 @@ function App() {
             <Route path="alert" element={<Alert />} />
             <Route path="alert-popup-1" element={<AlertPopup />} />
             <Route path="toast" element={<ToastNotification />} />
+            <Route path="modal" element={<ShowModal />} />
+            <Route path="form" element={<FormErrorHandler />} />
           </Route>
         </Route>
       </Routes>

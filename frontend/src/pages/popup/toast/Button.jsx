@@ -1,11 +1,12 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
 
 const Button = ({ children, handleClick }) => {
   return (
-    <button className="w-20 h-10" onClick={handleClick}>
-      {children}
-    </button>
+    <>
+      <button className="w-20 h-10" onClick={handleClick}>
+        {children}
+      </button>
+    </>
   );
 };
 

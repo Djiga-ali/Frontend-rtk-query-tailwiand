@@ -68,12 +68,13 @@ const ToastNotification = () => {
 
   return (
     <>
-      <div className="  h-screen">
+      <div className=" ">
         {list?.map((toast, i) => {
           console.log("toast:", toast);
           return (
-            <div key={i} className="relative animate-toast">
+            <div className="relative animate-toast">
               <div
+                key={i}
                 className={`absolute p-2 flex flex-col top-3 right-0 w-60 h-30 ${toast.backgroundColor} animate-toast`}
               >
                 <div className="relative mb-2">
@@ -98,8 +99,6 @@ const ToastNotification = () => {
         <Button handleClick={() => showToast("info")}>Info</Button>
         <Button handleClick={() => showToast("warning")}>Warning</Button>
       </div>
-
-      <div className="w-40 h-40 bottom-0 right-0 bg-black"></div>
     </>
   );
 };
