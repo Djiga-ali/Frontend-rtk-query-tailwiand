@@ -18,6 +18,10 @@ export default {
         },
       },
       animation: { toast: "toast 1s ease-in-out infinite" },
+      lineClamp: {
+        10: "10",
+        12: "12",
+      },
     },
   },
   plugins: [],

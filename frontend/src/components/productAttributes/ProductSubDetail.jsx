@@ -12,7 +12,7 @@ const ProductSubDetail = ({
   return (
     <>
       <div className="flex-1">
-        <div className="flex flex-row w-full h-full">
+        <div className="flex flex-row w-full h-20">
           <img
             src={activeImg}
             alt=""
