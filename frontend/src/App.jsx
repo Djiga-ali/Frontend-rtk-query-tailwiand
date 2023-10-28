@@ -23,6 +23,10 @@ import { productSlice } from "./app/features/product/productSlice";
 import Modal from "./pages/popup/modal/Modal";
 import ShowModal from "./pages/popup/modal/ShowModal";
 import FormErrorHandler from "./pages/Forms/FormErrorHandler";
+import Formvalidation from "./pages/Forms/validation/Formvalidation";
+import Caroussel from "./pages/carousselSlider/Caroussel";
+import AutoSliderCaroussel from "./pages/carousselSlider/autoSlider/AutoSliderCaroussel";
+import Slick from "./pages/carousselSlider/MultiSlide/Slick";
 
 function App() {
   useEffect(() => {
@@ -59,6 +63,10 @@ function App() {
             <Route path="toast" element={<ToastNotification />} />
             <Route path="modal" element={<ShowModal />} />
             <Route path="form" element={<FormErrorHandler />} />
+            <Route path="form-validation" element={<Formvalidation />} />
+            <Route path="caroussel" element={<Caroussel />} />
+            <Route path="auto-slider" element={<AutoSliderCaroussel />} />
+            <Route path="slick" element={<Slick />} />
           </Route>
         </Route>
       </Routes>
