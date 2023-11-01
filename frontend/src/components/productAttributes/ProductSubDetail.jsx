@@ -11,12 +11,13 @@ const ProductSubDetail = ({
 
   return (
     <>
-      <div className="flex-1">
-        <div className="flex flex-row w-full h-20">
+      <div className="w-full xxs:w-full">
+        <div className="flex flex-row w-full h-20 ">
           <img
             src={activeImg}
             alt=""
-            className="flex w-full h-full aspect-square object-cover"
+            // className="flex w-full h-full xxs:h-[60%]  aspect-square object-contain"
+            className="flex w-full h-full xxs:h-[60%]  aspect-square object-cover"
             onClick={() => {
               setSelectedImg(prod.pictures);
               setMainProdAttr(prod);

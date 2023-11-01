@@ -27,6 +27,7 @@ import Formvalidation from "./pages/Forms/validation/Formvalidation";
 import Caroussel from "./pages/carousselSlider/Caroussel";
 import AutoSliderCaroussel from "./pages/carousselSlider/autoSlider/AutoSliderCaroussel";
 import Slick from "./pages/carousselSlider/MultiSlide/Slick";
+import BreakPoints from "./components/breakPoints/BreakPoints";
 
 function App() {
   useEffect(() => {
@@ -67,6 +68,7 @@ function App() {
             <Route path="caroussel" element={<Caroussel />} />
             <Route path="auto-slider" element={<AutoSliderCaroussel />} />
             <Route path="slick" element={<Slick />} />
+            <Route path="break" element={<BreakPoints />} />
           </Route>
         </Route>
       </Routes>
