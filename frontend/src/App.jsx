@@ -15,8 +15,8 @@ import Prefetch from "./app/Prefetch";
 import AgeCalculator from "./pages/age/AgeCalculator";
 import Alert from "./pages/alert/Alert";
 import AlertPopup from "./pages/popup/tuto-1/AlertPopup";
-import Toast from "./pages/alert/Toast";
-import ToastNotification from "./pages/popup/toast/ToastNotification";
+// import Toast from "./pages/alert/Toast";
+// import ToastNotification from "./pages/popup/toast/ToastNotification";
 import { useEffect } from "react";
 import { store } from "./app/store";
 import { productSlice } from "./app/features/product/productSlice";
@@ -28,6 +28,8 @@ import Caroussel from "./pages/carousselSlider/Caroussel";
 import AutoSliderCaroussel from "./pages/carousselSlider/autoSlider/AutoSliderCaroussel";
 import Slick from "./pages/carousselSlider/MultiSlide/Slick";
 import BreakPoints from "./components/breakPoints/BreakPoints";
+import Toast from "./pages/popup/toast/Toast";
+import AlertComponent from "./pages/popup/tuto-1/AlertComponent";
 
 function App() {
   useEffect(() => {
@@ -61,7 +63,7 @@ function App() {
             <Route path="age" element={<AgeCalculator />} />
             <Route path="alert" element={<Alert />} />
             <Route path="alert-popup-1" element={<AlertPopup />} />
-            <Route path="toast" element={<ToastNotification />} />
+            <Route path="toast" element={<Toast />} />
             <Route path="modal" element={<ShowModal />} />
             <Route path="form" element={<FormErrorHandler />} />
             <Route path="form-validation" element={<Formvalidation />} />

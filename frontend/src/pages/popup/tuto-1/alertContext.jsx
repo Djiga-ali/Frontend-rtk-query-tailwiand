@@ -1,9 +1,14 @@
-import { createContext, useEffect, useRef, useState } from "react";
+import { createContext, useEffect, useRef, useState, useContext } from "react";
 
 const AlertContext = createContext();
 
 export const AlertProvider = ({ children }) => {
-  const [alert, setAlert] = useState(null);
+  // const [alert, setAlert] = useState(null);
+  const [type, setType] = useState(null);
+  const [openModal, setOpenModal] = useState(false);
+  const [openModal2, setOpenModal2] = useState(false);
+  const [openModal3, setOpenModal3] = useState(false);
+
   //   The useRef Hook allows you to persist values between renders. It can be used to store a mutable value that does not cause a re-render when updated
   // useRef is a React Hook that lets you reference a value that's not needed for rendering. const ref = useRef(initialValue)
   const timerRef = useRef(null);
@@ -17,15 +22,57 @@ export const AlertProvider = ({ children }) => {
 
     // setTimeout() can be used to schedule code execution after a designated amount of milliseconds.
     timerRef.current = setTimeout(() => {
-      setAlert(null);
-    }, 5000);
-  }, [alert]);
+      setType(null);
+    }, 2000);
+  }, [type]);
+
+  const showSuccess = (text) => {
+    setType({
+      text,
+      success: true,
+    });
+  };
+  const showError = (text) => {
+    setType({
+      text,
+      error: true,
+    });
+  };
+  const showInfo = (text) => {
+    setType({
+      text,
+      info: true,
+    });
+  };
+  const showWarning = (text) => {
+    setType({
+      text,
+      warning: true,
+    });
+  };
 
   return (
-    <AlertContext.Provider value={[alert, setAlert]}>
+    <AlertContext.Provider
+      value={{
+        type,
+        setType,
+        showSuccess,
+        showError,
+        showInfo,
+        showWarning,
+        openModal,
+        setOpenModal,
+        openModal2,
+        setOpenModal2,
+        openModal3,
+        setOpenModal3,
+      }}
+    >
       {children}
     </AlertContext.Provider>
   );
 };
 
-export default AlertContext;
+const useToast = () => useContext(AlertContext);
+
+export { useToast, AlertContext };

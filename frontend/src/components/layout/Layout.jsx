@@ -12,6 +12,7 @@ import Sidebar from "../nav/Sidebar";
 import { RiMenuUnfoldFill, RiMenuFoldFill } from "react-icons/ri";
 import Header from "../nav/mobile/Header";
 import Footer from "../nav/mobile/Footer";
+import AlertComponent from "../../pages/popup/tuto-1/AlertComponent";
 
 const Layout = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -66,8 +67,10 @@ const Layout = () => {
               </div>
             </div>
 
-            <div className="w-full">
-              <div className="w-full">
+            <div className=" w-full">
+              <div className=" w-full">
+                <AlertComponent />
+
                 <Outlet />
               </div>
             </div>
@@ -129,6 +132,7 @@ const Layout = () => {
             </div>
             <div className="w-screen z-0  absolute ">
               <div className="w-full ">
+                <AlertComponent />
                 <Outlet />
               </div>
             </div>
