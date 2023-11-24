@@ -15,7 +15,12 @@ const Toastmodal = ({ isVisible, close, children }) => {
       > */}
       <div
         onClick={handleClose}
+        // NB: Sans mais avec ralative et absolute fixed position ***********
         className="relative z-0  inset-0   flex justify-end items-start" // toast en haut à droit (coin haut droi)
+        // className="relative z-0  inset-0   flex justify-end items-start" // toast en haut à droit (coin haut droi)
+        // className="relative z-0   flex justify-evenly items-stretch" // toast au milieu en haut
+        // className="relative z-0 inset-0 flex justify-center items-end" // toast en bas et centre
+        // NB: avec fixed position ***********
         // className="fixed inset-0  flex justify-end items-start" // toast en haut à droit (coin haut droi)
 
         // className="fixed inset-0  flex justify-evenly items-end" // toast au milieu en bas
