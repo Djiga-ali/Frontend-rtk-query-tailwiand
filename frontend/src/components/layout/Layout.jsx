@@ -81,7 +81,7 @@ const Layout = () => {
       {/* // Mobile ************************************ */}
 
       <div className="md:hidden flex  flex-col bg-white">
-        <div className="flex-1 w-full h-full">
+        <div className="flex-1 w-full h-full ">
           <div className="flex-1 w-full ">
             <Countries />
           </div>

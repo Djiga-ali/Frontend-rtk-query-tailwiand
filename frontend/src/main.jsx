@@ -9,6 +9,9 @@ import { AlertProvider } from "./pages/popup/tuto-1/alertContext.jsx";
 import { useEffect } from "react";
 // import { attributeSlice } from "./app/features/attribute/attributeSlice.jsx";
 import { productSlice } from "./app/features/product/productSlice.jsx";
+// React slick
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 
 store.dispatch(
   productSlice.util.prefetch("getAllProducts", "productList", {

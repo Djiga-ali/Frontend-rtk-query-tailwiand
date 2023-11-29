@@ -30,6 +30,8 @@ import Slick from "./pages/carousselSlider/MultiSlide/Slick";
 import BreakPoints from "./components/breakPoints/BreakPoints";
 import Toast from "./pages/popup/toast/Toast";
 import AlertComponent from "./pages/popup/tuto-1/AlertComponent";
+import Cart from "./pages/cart/Cart";
+import Wishlist from "./pages/wishlist/Wishlist";
 
 function App() {
   useEffect(() => {
@@ -58,6 +60,8 @@ function App() {
               path="product-attributes/:slug"
               element={<ProductDetails2 />}
             />
+            <Route path="cart" element={<Cart />} />
+            <Route path="wishlist" element={<Wishlist />} />
             <Route path="select" element={<SelectOption />} />
             {/* complement */}
             <Route path="age" element={<AgeCalculator />} />

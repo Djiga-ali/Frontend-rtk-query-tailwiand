@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const SlickCard = ({ product }) => {
   return (
     <>
-      <div className="h-80 mt-4  flex flex-col w-full drop-shadow-lg rounded-lg">
+      <div className=" h-80 mt-4  flex flex-col w-full drop-shadow-lg rounded-lg">
         <div className="flex-1 w-full h-4/6  bg-slate-100 ">
           <Link to="">
             <img

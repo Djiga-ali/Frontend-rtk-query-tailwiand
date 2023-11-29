@@ -14,6 +14,8 @@ import PriceDetails from "./PriceDetails";
 import SponsoredProducts from "../slick/SponsoredProducts";
 import RelatedProduct from "../slick/RelatedProduct";
 import FromYourSeachs from "../slick/FromYourSeachs";
+// import Responsive from "../slick/SlickProduct";
+import SlickProduct from "../slick/SlickProduct";
 
 const ProductDetailpageVertical = () => {
   const params = useParams();
@@ -185,9 +187,10 @@ const ProductDetailpageVertical = () => {
         {/*  */}
       </div>
       {/* <div className="flex flex-col xxs:hidden xs:hidden sm:hidden md:flex sm:mb-10"> */}
-      <div className="xxs:mt-[300px] xs:mt-[700px] sm:mt-[300px] md:mt-[-50px]">
+      <div className="xxs:mt-[800px] xs:mt-[700px] sm:mt-[300px] md:mt-[-50px]">
         <h1>Sponsorisé:</h1>
-        <SponsoredProducts />
+        {/* <SponsoredProducts /> */}
+        <SlickProduct />
       </div>
       {/* <div>
             <h1>Related Products:</h1>
