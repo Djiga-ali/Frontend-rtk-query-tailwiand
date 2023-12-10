@@ -82,7 +82,10 @@ const SlickProduct = () => {
           className=" w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide"
         > */}
         {data.map((item) => (
-          <div className="w-full inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300">
+          <div
+            key={item.id}
+            className="w-full inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300"
+          >
             <SlickCard product={item} />
           </div>
         ))}

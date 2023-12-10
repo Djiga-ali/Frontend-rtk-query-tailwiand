@@ -32,6 +32,7 @@ import Toast from "./pages/popup/toast/Toast";
 import AlertComponent from "./pages/popup/tuto-1/AlertComponent";
 import Cart from "./pages/cart/Cart";
 import Wishlist from "./pages/wishlist/Wishlist";
+import HomewithSlide from "./pages/home/HomewithSlide";
 
 function App() {
   useEffect(() => {
@@ -47,6 +48,7 @@ function App() {
         <Route element={<Prefetch />}>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="homeslide" element={<HomewithSlide />} />
             <Route path="attribute" element={<ProductAttributes />} />
             <Route path="details/:id" element={<ProductAttributeDetails />} />
             <Route
