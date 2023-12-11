@@ -33,6 +33,12 @@ import AlertComponent from "./pages/popup/tuto-1/AlertComponent";
 import Cart from "./pages/cart/Cart";
 import Wishlist from "./pages/wishlist/Wishlist";
 import HomewithSlide from "./pages/home/HomewithSlide";
+import HowToUseRef from "./howToUse/useRef and useState/HowToUseRef";
+import HowToUseRefInInput from "./howToUse/useRef and useState/HowToUseRefInInput";
+import HowToUseRefInInputAudio from "./howToUse/useRef and useState/HowToUseRefInInputAudio";
+import HowToUseRefToTrackInputValue from "./howToUse/useRef and useState/HowToUseRefToTrackInputValue";
+import DragAndDropIntro from "./howToUse/dnd-kit/DragAndDropIntro";
+import GridDnd from "./howToUse/dnd-kit/GridDnd";
 
 function App() {
   useEffect(() => {
@@ -77,6 +83,14 @@ function App() {
             <Route path="auto-slider" element={<AutoSliderCaroussel />} />
             <Route path="slick" element={<Slick />} />
             <Route path="break" element={<BreakPoints />} />
+            {/* useRef() */}
+            <Route path="ref" element={<HowToUseRef />} />
+            <Route path="ref-input" element={<HowToUseRefInInput />} />
+            <Route path="ref-audio" element={<HowToUseRefInInputAudio />} />
+            <Route path="ref-track" element={<HowToUseRefToTrackInputValue />} />
+            {/* DND/KIT */}
+            <Route path="sortable" element={<DragAndDropIntro />} />
+            <Route path="dnd-grid" element={<GridDnd />} />
           </Route>
         </Route>
       </Routes>

@@ -9,7 +9,7 @@ export default function Validation(values) {
   if (values.firstName === "") {
     errors.firstName = "FirstName is require";
   } else if (!firstName_pattern.test(values.firstName)) {
-    errors.firstName = "LirstName is not correct";
+    errors.firstName = "FirstName is not correct";
   }
   if (values.lastName === "") {
     errors.lastName = "LastName is require";
