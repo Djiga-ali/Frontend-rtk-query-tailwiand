@@ -45,16 +45,32 @@ const HomewithSlide = () => {
   const { ids } = productEntities;
 
   const settings = {
+    // dots: true,
+    // fade: true,
+    // infinite: true,
+    // speed: 500,
+    // slidesToShow: 1,
+    // slidesToScroll: 1,
+    // autoplay: true,
+    // // speed: 2000,
+    // autoplaySpeed: 2000,
+    // // cssEase: "linear"
     dots: true,
-    fade: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      speed: 500,
+      autoplaySpeed: 3000,
+      cssEase: "linear"
   };
 
   return (
     <>
+    <div className=" flex justify-center items-center">
+
+    <div className="w-[600px] h-[600px]">
+
       <h2>Fade</h2>
       <Slider {...settings}>
         {data.map((item) => (
@@ -63,6 +79,8 @@ const HomewithSlide = () => {
           </div>
         ))}
       </Slider>
+    </div>
+    </div>
     </>
   );
 };

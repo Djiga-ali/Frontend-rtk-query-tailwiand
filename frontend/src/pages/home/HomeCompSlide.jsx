@@ -15,8 +15,8 @@ const HomeCompSlide = ({ item }) => {
 
   return (
     <>
-      <div>
-        <div className={` relative  flex flex-col justify-center items-center`}>
+      <div className="flex flex-col justify-center items-center">
+        <div className={` relative w-[600px] h-[600px]  flex flex-col justify-center items-center`}>
           <img src={item.img} alt={item?.name} className="w-[600px] h-[600px]" />
 
           <div
