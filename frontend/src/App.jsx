@@ -39,6 +39,7 @@ import HowToUseRefInInputAudio from "./howToUse/useRef and useState/HowToUseRefI
 import HowToUseRefToTrackInputValue from "./howToUse/useRef and useState/HowToUseRefToTrackInputValue";
 import DragAndDropIntro from "./howToUse/dnd-kit/DragAndDropIntro";
 import GridDnd from "./howToUse/dnd-kit/GridDnd";
+import Register from "./pages/Forms/auth/Register";
 
 function App() {
   useEffect(() => {
@@ -91,6 +92,8 @@ function App() {
             {/* DND/KIT */}
             <Route path="sortable" element={<DragAndDropIntro />} />
             <Route path="dnd-grid" element={<GridDnd />} />
+            {/* Forms  */}
+            <Route path="register" element={<Register />} />
           </Route>
         </Route>
       </Routes>

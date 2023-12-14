@@ -10,8 +10,8 @@ const Cart = () => {
     <>
       <div className="flex-1 mr-2">
         {/* colors : https://flowbite.com/docs/customize/colors/ */}
-        <div className="flex flex-row justify-between p-2 bg-indigo-100">
-          <div className="w-4/6  mr-3">
+        <div className="flex flex-row justify-between p-2 bg-indigo-100 xxs:flex-col xs:flex-col sm:flex-col md:flex-row">
+          <div className="w-4/6  mr-3 xxs:w-full xs:w-full sm:w-full md:w-4/6">
             <div className="flex flex-col w-full ">
               <div className="w-full">
                 {/* cart header */}
@@ -68,7 +68,7 @@ const Cart = () => {
                     </div>
                     <div className="w-2/6">
                       <div className=" relative w-full text-end flex justify-center items-center ">
-                        <span className=" absolute text-semibold font-semibold ml-20 ">
+                        <span className=" absolute text-semibold font-semibold ml-20 cursor-pointer">
                           {/* 3000€ */}
                           <RiDeleteBin5Line className="absolute text-gray-400 text-lg" />
                         </span>
@@ -78,55 +78,7 @@ const Cart = () => {
                   <div className=" w-full border-b border-indigo-100"></div>
                   {/* **** */}
                   {/* ******* item 2 */}
-                  <div className="flex flex-row w-full  justify-between p-2 bg-white rounded-lg">
-                    <div className="w-3/6  ">
-                      <div className="w-3/6 flex flex-row">
-                        <img
-                          src={product?.pictures[0]?.image}
-                          className="w-10 h-10 rounded-lg"
-                          alt=""
-                        />
-                        <div className="flex flex-col ml-2">
-                          <span className="text-[14px] font-semibold">
-                            Name:
-                          </span>
-                          <small>color:</small>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="w-1/6">
-                      <div className="  flex flex-row">
-                        <div className="  w-4 h-4 rounded-full  border-[1px] border-black   flex justify-center items-center">
-                          <span className="text-slace-300 text-xl  text-center">
-                            -
-                          </span>
-                        </div>
-                        <div className="w-6 mb-1  flex justify-center items-center border-b border-black">
-                          <span className="font-semibold text-xs w-full h-full  text-center ">
-                            2
-                          </span>
-                        </div>
-                        <div className="  w-4 h-4 rounded-full  border-[1px] border-black   flex justify-center items-center">
-                          <span className="text-slace-300 text-xs text-center">
-                            +
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="w-2/6">
-                      <div className="text-end ">
-                        <small className=" ">300000000000000€</small>
-                      </div>
-                    </div>
-                    <div className="w-2/6">
-                      <div className=" relative w-full text-end flex justify-center items-center ">
-                        <span className=" absolute text-semibold font-semibold ml-20 ">
-                          {/* 3000€ */}
-                          <RiDeleteBin5Line className="absolute text-gray-400 text-lg" />
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+                  
                   <div className=" w-full p-2 border-t border-indigo-100 flex flex-row justify-between">
                     <div className="">
                       <span className="text-sm font-bold">Subtotal: </span>
@@ -142,10 +94,10 @@ const Cart = () => {
                   {/* clear cart */}
                   <div className="w-full ">
                     <div className="flex flex-row justify-between p-2">
-                      <div className=" flex justify-center items-center w-60 h-10 rounded-lg bg-purple-600 text-white text-center font-semibold">
+                      <div className=" flex justify-center items-center w-60 h-10 rounded-lg bg-purple-600 text-white text-center font-semibold cursor-pointer">
                         <span>Clear cart</span>
                       </div>
-                      <div className=" flex justify-center items-center w-60 h-10 rounded-lg border border-purple-600 text-purple-600 text-center font-semibold">
+                      <div className=" flex justify-center ml-2 items-center w-60 h-10 rounded-lg border border-purple-600 text-purple-600 text-center font-semibold cursor-pointer">
                         <span>Continue shopping</span>
                       </div>
                     </div>
@@ -154,7 +106,7 @@ const Cart = () => {
               </div>
             </div>
           </div>
-          <div className="w-2/6  ">
+          <div className="w-2/6 xxs:w-full  xs:w-full sm:w-full md:w-2/6 xxs:mt-2 xs:mt-2 sm:mt-2 md:mt-0">
             <div className="flex flex-col w-full rounded-lg bg-white">
               <div className=" w-fullmb-2 border  p-2">
                 <div className="w-full flex justify-center items-center">

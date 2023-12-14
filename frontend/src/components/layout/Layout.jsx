@@ -18,7 +18,8 @@ const Layout = () => {
   const [openMenu, setOpenMenu] = useState(false);
   return (
     <>
-      <div className="md:flex hidden flex-col bg-white ">
+      <div className="md:flex hidden max-w-full flex-col bg-white ">
+  
         <div className="flex-1 w-full ">
           <div className="flex-1  w-full h-7  p-y-2 ">
             <Countries />
