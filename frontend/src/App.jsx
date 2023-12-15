@@ -40,6 +40,7 @@ import HowToUseRefToTrackInputValue from "./howToUse/useRef and useState/HowToUs
 import DragAndDropIntro from "./howToUse/dnd-kit/DragAndDropIntro";
 import GridDnd from "./howToUse/dnd-kit/GridDnd";
 import Register from "./pages/Forms/auth/Register";
+import Dashbord from "./pages/dashbord/Dashbord";
 
 function App() {
   useEffect(() => {
@@ -95,6 +96,7 @@ function App() {
             {/* Forms  */}
             <Route path="register" element={<Register />} />
           </Route>
+            <Route path="/dashbord" element={<Dashbord />} />
         </Route>
       </Routes>
     </>
