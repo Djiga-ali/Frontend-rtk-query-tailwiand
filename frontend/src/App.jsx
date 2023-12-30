@@ -41,6 +41,7 @@ import DragAndDropIntro from "./howToUse/dnd-kit/DragAndDropIntro";
 import GridDnd from "./howToUse/dnd-kit/GridDnd";
 import Register from "./pages/Forms/auth/Register";
 import Dashbord from "./pages/dashbord/Dashbord";
+import DashLayout from "./components/dashboard/DashLayout";
 
 function App() {
   useEffect(() => {
@@ -89,14 +90,19 @@ function App() {
             <Route path="ref" element={<HowToUseRef />} />
             <Route path="ref-input" element={<HowToUseRefInInput />} />
             <Route path="ref-audio" element={<HowToUseRefInInputAudio />} />
-            <Route path="ref-track" element={<HowToUseRefToTrackInputValue />} />
+            <Route
+              path="ref-track"
+              element={<HowToUseRefToTrackInputValue />}
+            />
             {/* DND/KIT */}
             <Route path="sortable" element={<DragAndDropIntro />} />
             <Route path="dnd-grid" element={<GridDnd />} />
             {/* Forms  */}
             <Route path="register" element={<Register />} />
           </Route>
-            <Route path="/dashbord" element={<Dashbord />} />
+          <Route path="/dashbord" element={<DashLayout />}>
+            <Route index element={<Dashbord />} />
+          </Route>
         </Route>
       </Routes>
     </>
